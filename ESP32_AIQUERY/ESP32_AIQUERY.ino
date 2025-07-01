@@ -1,3 +1,31 @@
+/*
+Program Briefing :
+This code is built for an ESP32 Devkit for query-ing Google's Gemini API.
+Upon query-ing an question. ESP32 will display the answer on the ILI9341 display along with speaking the answer using a speaker with the help of TTS Library.
+
+Requirements :
+1) ESP32
+2) ILI9341 Display
+3) Audio-Amplfier Module
+4) A speaker ( I have used a broken Headset's speaker. )
+
+Configuration :
+  1) ILI9341
+      - any SPI bus of the uC. configuration is then set in the TFT_eSPI settings file.
+  2) Audio Amplifier
+      - 25 (DAC of ESP32)
+
+Program Flow :
+1) Initialize all variables.
+2) Construct a connection with a WIFI-Network.
+3) Host a server through which ESP32 will recieve questions.
+4) Send the request to GEMINI AI for answers.
+5) Get Answer.
+6) Format the answer correctly for TTS Library.
+7) Display the Answer along with speaking the answer.
+8) Repeat.
+*/
+
 #include <Arduino.h>
 #include <WiFi.h>
 #include <WebServer.h>
